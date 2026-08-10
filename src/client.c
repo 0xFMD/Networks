@@ -30,8 +30,16 @@ if (socket_fd < 0) {
 }
 int main(void) {
    
-    
+    int socket_fd = connect_to_server(SERVER_IP, PORT);
 
+    if (socket_fd < 0) {
+        printf("Failed to connect to server\n");
+        return 1;
+    }
+
+        printf("Connected to server\n");
+
+        close(socket_fd);
 
     return 0; 
 }
