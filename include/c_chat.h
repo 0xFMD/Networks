@@ -7,6 +7,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include<sys/socket.h>      
+#include<unistd.h>
 
 #define MAX_USERNAME_LENGTH 64
 #define MAX_MESSAGE_LENGTH 512
@@ -32,7 +34,7 @@ struct payload_t {
 user_t *create_user(const char *username, const char *ip);
 payload_t *create_message(const user_t *user, const char *message);
 
-bool edit_message(payload_t *message);
+bool change_message(payload_t *message);
 
 void delete_user(user_t *user);
 void delete_payload(payload_t *message);
@@ -40,5 +42,7 @@ void delete_payload(payload_t *message);
 int init_socket();
 
 bool send_message(int socket_fd, const payload_t *message);
+
+ bool receive_message(int socket_fd, payload_t *message);
 
 #endif
