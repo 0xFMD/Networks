@@ -3,9 +3,9 @@
 
 payload_t *create_message(const user_t *user, const char *message){
  
-       if(!payload || !user) return NULL;
+       if(!message || !user) return NULL;
 
-    payload_t * payload = (payload_t)malloc(sizeof(payload_t));
+    payload_t * payload = (payload_t*)malloc(sizeof(payload_t));
     if(!payload) return NULL;
 
     payload->user_metadata = *user;
