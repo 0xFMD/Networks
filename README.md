@@ -1,4 +1,4 @@
-# network
+# Network
 
 Collection of command-line network applications in C for learning POSIX sockets and basic networking.
 
